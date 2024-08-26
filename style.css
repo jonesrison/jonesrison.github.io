@@ -7,8 +7,6 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #000;
     color: #0F0;
     text-align: center;
@@ -33,7 +31,7 @@ body {
 
 /* Home Section (Fullscreen) */
 .home {
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,44 +41,44 @@ body {
     position: relative;
     z-index: 1;
 }
+
 @font-face {
     font-family: 'LED Dot Matrix';
     src: url('LED Dot-Matrix.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
+
 @font-face {
     font-family: 'Poppins';
-    src: url('Poppins\ Bold\ 700.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('Poppins Bold 700.ttf') format('truetype');
 }
+
 .header-content {
     align-items: center;
     max-width: 900px;
     padding: 20px;
-    font-family: "LED Dot Matrix",sans-serif;   
+    font-family: "LED Dot Matrix", sans-serif;   
     font-size: 10vh;
-    
 }
 
 h1 {
-    font-family: 'LED Dot Matrix', sans-serif; /* Use LED Dot Matrix for the main heading */
+    font-family: 'LED Dot Matrix', sans-serif;
 }
+
 .subtitle-container {
     position: relative;
-    display: -moz-inline-stack;
-    height: 30px; /* Adjust based on your subtitle height */
+    display: inline-block;
+    height: 30px;
 }
+
 .subtitle {
     font-size: 6vh;
     color: #bff805;
     position: absolute;
     width: 100%;
     opacity: 0;
-    
     transition: opacity 1s ease-in-out;
 }
+
 .subtitle:nth-child(1) {
     animation: fadeInOut 9s infinite;
 }
@@ -92,6 +90,7 @@ h1 {
 .subtitle:nth-child(3) {
     animation: fadeInOut 9s infinite 6s;
 }
+
 @keyframes fadeInOut {
     0% {
         opacity: 0;
@@ -109,34 +108,39 @@ h1 {
         opacity: 0;
     }
 }
+
+/* Education Section */
 .education {
     padding: 50px;
-    height:100vh;
     background: rgba(0, 0, 0, 0.5);
 }
+
 .education-header {
     margin-bottom: 20px;
     color: #A4C639;
     font-size: 8vh;
-    font-family: "LED Dot Matrix",sans-serif;
+    font-family: "LED Dot Matrix", sans-serif;
 }
+
 .education-cards {
     display: flex;
-    flex-direction: row; /* Arrange cards horizontally */
-    justify-content: center; /* Center cards horizontally */
-    align-items: center; /* Center cards vertically */
-    flex-wrap: wrap; /* Allow wrapping if needed */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Added gap for spacing */
 }
+
 .card {
-    
     perspective: 1000px;
     width: 200px;
     height: 300px;
     margin: 10px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Example shadow */
-    overflow: hidden; /* Hide any content that overflows the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
+
 .card-inner {
     position: relative;
     width: 100%;
@@ -144,9 +148,11 @@ h1 {
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
+
 .card:hover .card-inner {
     transform: rotateY(180deg);
 }
+
 .card-front, .card-back {
     position: absolute;
     width: 100%;
@@ -156,38 +162,40 @@ h1 {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    box-sizing: border-box; /* Ensure padding is included in width/height */
+    box-sizing: border-box;
 }
+
 .card-front {
     background-color: #fff;
     color: #000;
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally */
-    justify-content: center; /* Center children vertically */
-    padding: 20px;
-    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
 .card-front img {
-    max-width: 80%; /* Limit the image width */
-    height: auto; /* Maintain the aspect ratio */
-    margin-bottom: 10px; /* Space between image and text */
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 10px;
 }
+
 .card-front p {
-    font-size: 1.2rem; /* Adjust text size as needed */
+    font-size: 1.2rem;
 }
+
 .card-back {
-    background-color:white;
+    background-color: white;
     opacity: 70%;
     color: #000;
     transform: rotateY(180deg);
 }
-/* Gradient Overlay */
+
 /* Projects Section */
 .projects {
-    height: 100vh; /* Full viewport height */
-    padding: 0 20px; /* Horizontal padding */
-    background: rgba(0, 0, 0, 0.8); /* Darker background for contrast */
+    height: 100vh;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -195,57 +203,54 @@ h1 {
     position: relative;
 }
 
-/* Header Styles */
 .projects-header {
     color: #A4C639;
-    font-family: "LED Dot Matrix",sans-serif;
+    font-family: "LED Dot Matrix", sans-serif;
     font-size: 12vh;
     margin-bottom: 20px;
     font-weight: bold;
 }
 
-/* Container for Scrollable Projects */
 .projects-container {
     display: flex;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 20px; /* Space between project cards */
+    overflow-x: auto;
+    gap: 20px;
     padding: 10px;
-    width: 100%; /* Ensure it spans the full width */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
-/* Hide scrollbar for WebKit browsers */
 .projects-container::-webkit-scrollbar {
     display: none;
 }
 
 .project-card {
-    flex: 0 0 auto; /* Prevent card from shrinking */
-    width: 300px; /* Adjust width as needed */
-    height: 400px; /* Adjust height as needed */
-    perspective: 1000px; /* Enable 3D perspective */
-    position: relative; /* Required for the flip effect */
+    flex: 0 0 auto;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    position: relative;
 }
 
 .card-inner {
     width: 100%;
     height: 100%;
     position: relative;
-    transition: transform 0.6s; /* Smooth flip effect */
-    transform-style: preserve-3d; /* Enable 3D transformations */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
 }
 
 .project-card:hover .card-inner {
-    transform: rotateY(180deg); /* Flip the card on hover */
+    transform: rotateY(180deg);
 }
 
 .card-front, .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Hide the back side when facing away */
-    border-radius: 15px; /* Rounded corners */
-    overflow: hidden; /* Ensure content stays within bounds */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .card-front {
@@ -265,7 +270,7 @@ h1 {
     justify-content: center;
     padding: 20px;
     text-align: center;
-    transform: rotateY(180deg); /* Flip the back side initially */
+    transform: rotateY(180deg);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
@@ -279,15 +284,66 @@ h1 {
 .card-front h3, .card-front p, .card-back p {
     margin: 10px 0;
     font-size: 1rem;
-    color: #333; /* Darker text color for better readability */
+    color: #333;
 }
-/* Contact Section Styles */
+
+/* Contact Section */
 #contact {
     background-color: #f8f8f8;
     padding: 50px 20px;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    
-  }
+}
 
-  
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        font-size: 6vh;
+    }
+
+    .subtitle {
+        font-size: 4vh;
+    }
+
+    .education-header {
+        font-size: 6vh;
+    }
+
+    .education-cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 90%;
+        height: auto;
+    }
+
+    .projects-header {
+        font-size: 8vh;
+    }
+
+    .project-card {
+        width: 90%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        font-size: 4vh;
+    }
+
+    .subtitle {
+        font-size: 3vh;
+    }
+
+    .education-header {
+        font-size: 5vh;
+    }
+
+    .projects-header {
+        font-size: 6vh;
+    }
+}
