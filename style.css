@@ -1,0 +1,293 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #0F0;
+    text-align: center;
+}
+
+/* Video Background */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Home Section (Fullscreen) */
+.home {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+@font-face {
+    font-family: 'LED Dot Matrix';
+    src: url('LED Dot-Matrix.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins\ Bold\ 700.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.header-content {
+    align-items: center;
+    max-width: 900px;
+    padding: 20px;
+    font-family: "LED Dot Matrix",sans-serif;   
+    font-size: 10vh;
+    
+}
+
+h1 {
+    font-family: 'LED Dot Matrix', sans-serif; /* Use LED Dot Matrix for the main heading */
+}
+.subtitle-container {
+    position: relative;
+    display: -moz-inline-stack;
+    height: 30px; /* Adjust based on your subtitle height */
+}
+.subtitle {
+    font-size: 6vh;
+    color: #bff805;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    
+    transition: opacity 1s ease-in-out;
+}
+.subtitle:nth-child(1) {
+    animation: fadeInOut 9s infinite;
+}
+
+.subtitle:nth-child(2) {
+    animation: fadeInOut 9s infinite 3s;
+}
+
+.subtitle:nth-child(3) {
+    animation: fadeInOut 9s infinite 6s;
+}
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.education {
+    padding: 50px;
+    height:100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+.education-header {
+    margin-bottom: 20px;
+    color: #A4C639;
+    font-size: 8vh;
+    font-family: "LED Dot Matrix",sans-serif;
+}
+.education-cards {
+    display: flex;
+    flex-direction: row; /* Arrange cards horizontally */
+    justify-content: center; /* Center cards horizontally */
+    align-items: center; /* Center cards vertically */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+}
+.card {
+    
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Example shadow */
+    overflow: hidden; /* Hide any content that overflows the card */
+}
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding is included in width/height */
+}
+.card-front {
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    padding: 20px;
+    box-sizing: border-box;
+}
+.card-front img {
+    max-width: 80%; /* Limit the image width */
+    height: auto; /* Maintain the aspect ratio */
+    margin-bottom: 10px; /* Space between image and text */
+}
+.card-front p {
+    font-size: 1.2rem; /* Adjust text size as needed */
+}
+.card-back {
+    background-color:white;
+    opacity: 70%;
+    color: #000;
+    transform: rotateY(180deg);
+}
+/* Gradient Overlay */
+/* Projects Section */
+.projects {
+    height: 100vh; /* Full viewport height */
+    padding: 0 20px; /* Horizontal padding */
+    background: rgba(0, 0, 0, 0.8); /* Darker background for contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Header Styles */
+.projects-header {
+    color: #A4C639;
+    font-family: "LED Dot Matrix",sans-serif;
+    font-size: 12vh;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Container for Scrollable Projects */
+.projects-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 20px; /* Space between project cards */
+    padding: 10px;
+    width: 100%; /* Ensure it spans the full width */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Hide scrollbar for WebKit browsers */
+.projects-container::-webkit-scrollbar {
+    display: none;
+}
+
+.project-card {
+    flex: 0 0 auto; /* Prevent card from shrinking */
+    width: 300px; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed */
+    perspective: 1000px; /* Enable 3D perspective */
+    position: relative; /* Required for the flip effect */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s; /* Smooth flip effect */
+    transform-style: preserve-3d; /* Enable 3D transformations */
+}
+
+.project-card:hover .card-inner {
+    transform: rotateY(180deg); /* Flip the card on hover */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back side when facing away */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Ensure content stays within bounds */
+}
+
+.card-front {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-back {
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    transform: rotateY(180deg); /* Flip the back side initially */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-front img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card-front h3, .card-front p, .card-back p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #333; /* Darker text color for better readability */
+}
+/* Contact Section Styles */
+#contact {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    height: 100vh;
+    justify-content: center;
+    
+  }
+
+  
