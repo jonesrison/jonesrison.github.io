@@ -1,4 +1,4 @@
-/* Basic Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,6 @@ body {
     text-align: center;
 }
 
-/* Video Background */
 .video-container {
     position: fixed;
     top: 0;
@@ -29,7 +28,6 @@ body {
     object-fit: cover;
 }
 
-/* Home Section (Fullscreen) */
 .home {
     height: 100vh;
     display: flex;
@@ -108,7 +106,6 @@ h1 {
     }
 }
 
-/* Education Section */
 .education {
     padding: 50px;
     background: rgba(0, 0, 0, 0.5);
@@ -127,7 +124,7 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px; /* Added gap for spacing */
+    gap: 20px; 
 }
 
 .card {
@@ -190,12 +187,11 @@ h1 {
     transform: rotateY(180deg);
 }
 
-/* Projects Section */
-/* Projects Section */
+
 .projects {
-    height: auto; /* Allow height to grow based on content */
-    padding: 20px; /* Adjust padding for better spacing */
-    background: rgba(0, 0, 0, 0.8); /* Darker background for contrast */
+    height: auto; 
+    padding: 20px; 
+    background: rgba(0, 0, 0, 0.8); 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -206,30 +202,29 @@ h1 {
 .projects-header {
     color: #A4C639;
     font-family: "LED Dot Matrix", sans-serif;
-    font-size: 5vw; /* Responsive font size */
+    font-size: 5vw; 
     margin-bottom: 20px;
     font-weight: bold;
 }
 
-/* Container for Scrollable Projects */
+
 .projects-container {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping of project cards */
-    gap: 20px; /* Space between project cards */
-    justify-content: center; /* Center the project cards horizontally */
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
     padding: 10px;
     width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    overflow-x: hidden; 
 }
 
-/* Project Card Styles */
 .project-card {
-    flex: 0 1 300px; /* Flex-basis for responsive sizing */
-    max-width: 300px; /* Maximum width */
-    height: 400px; /* Fixed height */
-    perspective: 1000px; /* Enable 3D perspective */
+    flex: 0 1 300px; 
+    max-width: 300px; 
+    height: 400px;
+    perspective: 1000px;
     position: relative;
-    margin: 0 10px; /* Margin for spacing between cards */
+    margin: 0 10px; 
 }
 
 .card-inner {
@@ -287,7 +282,6 @@ h1 {
     color: #333;
 }
 
-/* Contact Section */
 #contact {
     filter: blur(50%);
     padding: 50px 20px;
@@ -299,5 +293,5 @@ h1 {
 .contact-container{
     filter: blur(70%);
     height: 70vh;
-    text-shadow: gray;
+    text-shadow: #A4C639;
 }
