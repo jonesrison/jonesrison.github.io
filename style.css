@@ -117,23 +117,7 @@ h1 {
     font-size: 8vh;
     font-family: "LED Dot Matrix", sans-serif;
 }
-.container {
-    color: white;
-    position: relative;
-    font-family: sans-serif;
-  }
-
-  .container::before,
-  .container::after {
-    content: "";
-    background-color: #fab5704c;
-    position: absolute;
-  }
-
-  .container::before {
-    border-radius: 50%;
-    width: 6rem;
-    height: 6rem;
+ 6rem;
     top: 30%;
     right: 7%;
  
