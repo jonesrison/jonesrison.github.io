@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of Jones Rison, specializing in Artificial Intelligence and Data Science.">
-    <meta name="keywords" content="Jones Rison, portfolio, AI, data science">
+<meta name="keywords" content="Jones Rison, portfolio, AI, data science">
 
     <link rel="stylesheet" href="styles.css">
     <title>Jones Rison</title>
@@ -18,16 +18,15 @@
             <h1><span style="color:#0da332">J</span>ones<span style="color:#0da332">.</span></h1>
         </div>
         <button class="menu-btn" id="menu-btn">☰</button>
-        <ul class="navlinks" id="navlinks">
-            <li><button class="close-btn" id="close-btn">×</button></li>
+        <ul class="navlinks" id="navlinks"> <!-- Added ID to the ul element -->
+            <li><button class="close-btn" id="close-btn">×</button></li> <!-- Close button -->
             <li><a href="#home">Home</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#education">Education</a></li> <!-- Updated to lowercase -->
+            <li><a href="#Education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
         </ul>
     </nav>
-
-    <section class="Home" id="home">
+    <section class="Home">
         <div class="content">
             <div class="maincontent">
                 <h1 class="name">Jones Rison</h1>
@@ -35,7 +34,6 @@
             </div>
         </div>
     </section>
-
     <section id="gallery" class="animate-on-scroll">
         <div class="gall">
             <div class="masonry">
@@ -47,8 +45,7 @@
             </div>
         </div>
     </section>
-
-    <section id="education" class="animate-on-scroll">
+    <section id="Education" class="animate-on-scroll">
         <header class="education-header">
             <h2>Education</h2>
         </header>
@@ -98,11 +95,10 @@
                     <div class="card-back">
                         <p>Kindergarten to class 5, at Lords Academy, Varandarappilly, Thrissur.</p>
                     </div>
-                </div>
+                </ div>
             </div>
         </div>
     </section>
-
     <section id="projects" class="animate-on-scroll">
         <header class="education-header">
             <h2>My Projects</h2>
@@ -111,8 +107,8 @@
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img src="images/project4.png" alt="WikiLynx logo">
-                        <p>WikiLynx - A Wikipedia-based game show</p>
+                        <img src="images/project4.png" alt="yt/reddyit logo">
+                        <p>WIkIlynx-A wikepedia based game show</p>
                     </div>
                     <div class="card-back">
                         <p>Hoisted and worked as the co-ordinator for WikiLynx, a game show conducted under ARTICON RSET.</p>
@@ -122,8 +118,8 @@
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img src="images/project1.jpg" alt="REDDYIT logo">
-                        <p>REDDYIT - A Python Script Based Automated YouTube Channel</p>
+                        <img src="images/project1.jpg" alt="yt/reddyit logo">
+                        <p>REDDYIT-A python Script Based Automated Youtube channel</p>
                     </div>
                     <div class="card-back">
                         <p>An Automated YouTube Channel based on a Python script that automatically synthesizes Reddit stories into YouTube shorts.</p>
@@ -134,11 +130,11 @@
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img src="images/project2.png" alt="Food Product Logo">
-                        <p>Assisted in launching a food-based product</p>
+                        <img src="images/project2.png" alt="Higher Secondary Logo">
+                        <p>Assisted in launching a food based product</p>
                     </div>
                     <div class="card-back">
-                        <p>Worked together with design & manufacturing of vacuum sealed and deep frozen grated coconut, and played a key role in getting the product a market launch.</p>
+                        <p>Worked together with design & manufacturing of vaccum sealed and deep frozen grated coconut, and played a key role in getting the product a market launch</p>
                     </div>
                 </div>
             </div>
@@ -146,17 +142,16 @@
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img style="border-radius: 5%;" src="images/project3.jpeg" alt="Social Media Management">
+                        <img style="border-radius: 5%;" src="images/project3.jpeg" alt="High School Logo">
                         <p style="text-align: center;">Social Media Management</p>
                     </div>
                     <div class="card-back">
-                        <p>Handled the social media pages for Frills 'n' Flora and its sister concerns.</p>
+                        <p>Handled The Social media pages for Frills 'n' Flora and its sister concerns</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <section id="contact" class="animate-on-scroll">
         <div class="contact-form-container">
             <h2>Contact Me</h2>
@@ -173,24 +168,29 @@
     <script>
         // Function to handle the visibility of elements
         const observerOptions = {
-            root: null,
-            threshold: 0.1
+            root: null, // Use the viewport as the root
+            threshold: 0.1 // Trigger when 10% of the element is visible
         };
 
+        // Create an Intersection Observer instance
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+                    entry.target.classList.add('visible'); // Add the visible class
+                    observer.unobserve(entry.target); // Stop observing the element after it becomes visible
                 }
             });
         }, observerOptions);
 
+        // Select all elements with the animate-on-scroll class
         const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+
+        // Observe each element
         elementsToAnimate.forEach(element => {
             observer.observe(element);
         });
 
+        // Configuration for displaying professions
         const professions = [
             "Student: Artificial Intelligence and Data Science",
             "Ethical Hacking Aspirant",
@@ -198,53 +198,75 @@
             "'Voyageur'"
         ];
 
-        const displayDuration = 3000;
+        const displayDuration = 3000; // Duration to display each profession
         const professionDiv = document.getElementById('profession');
         let currentIndex = 0;
 
+        // Function to display the current profession with animation
         function displayProfession() {
-            professionDiv.classList.remove("fade-in");
-            professionDiv.innerHTML = professions[currentIndex];
-            professionDiv.classList.add("fade-in");
+            professionDiv.classList.remove("fade-in"); // Remove class to reset animation
+            professionDiv.innerHTML = professions[currentIndex]; // Set the new profession
+            professionDiv.classList.add("fade-in"); // Add class to trigger animation
 
-            currentIndex = (currentIndex + 1) % professions.length;
-            setTimeout(displayProfession, displayDuration);
+ currentIndex = (currentIndex + 1) % professions.length; // Update index
+            setTimeout(displayProfession, displayDuration); // Schedule next profession
         }
 
+        // Start displaying professions
         displayProfession();
 
+        // Toggle mobile menu
         const menuBtn = document.getElementById('menu-btn');
         const closeBtn = document.getElementById('close-btn');
         const navLinks = document.getElementById('navlinks');
 
         menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            navLinks.classList.toggle('active'); // Toggle the active class to show/hide links
         });
 
         closeBtn.addEventListener('click', () => {
-            navLinks.classList.remove('active');
+            navLinks.classList.remove('active'); // Remove the active class to hide links
         });
-                document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault();
 
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            const responseDiv = document.getElementById('form-response');
+       // Function to handle form submission
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
 
-            if (name && email && message) {
-                responseDiv.innerHTML = `<p>Thank you, ${name}. Your message has been sent!</p>`;
-                responseDiv.style.color = 'green';
+      // Get the form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
 
-                document.getElementById('contact-form').reset();
-            } else {
-                responseDiv.innerHTML = '<p>Please fill in all fields before submitting.</p>';
-                responseDiv.style.color = 'red';
-            }
+      // Create the email params
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message,
+      };
+
+      // Send the email using EmailJS
+      emailjs.send('service_hrf6osd', 'template_wncl9pb', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            document.getElementById('form-response').innerText = Thank you, ${name}! Your message has been sent.;
+        }, function(error) {
+            console.error('FAILED...', error);
+            document.getElementById('form-response').innerText = Oops! Something went wrong. Please try again later.;
         });
+
+      // Clear the form
+      document.getElementById('contact-form').reset();
+  });
     </script>
-</body>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init("fKraOgtqCmnKSi3hv"); // Replace with your actual public key from EmailJS
+    })();
+</script>
 
+</body>
 </html>
 
-        
