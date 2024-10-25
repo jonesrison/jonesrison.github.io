@@ -248,10 +248,10 @@
       emailjs.send('service_hrf6osd', 'template_wncl9pb', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
-            document.getElementById('form-response').innerText = Thank you, ${name}! Your message has been sent.;
+            document.getElementById('form-response').innerText = `Thank you, ${name}! Your message has been sent.`;
         }, function(error) {
             console.error('FAILED...', error);
-            document.getElementById('form-response').innerText = Oops! Something went wrong. Please try again later.;
+            document.getElementById('form-response').innerText = `Oops! Something went wrong. Please try again later.`;
         });
 
       // Clear the form
@@ -269,4 +269,3 @@
 
 </body>
 </html>
-
