@@ -319,6 +319,48 @@ section {
   padding: 50px 0; /* Add padding to the section */
 }
 
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#jokeButton {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: #4caf50; /* Green color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#jokeButton:hover {
+  background-color: #45a049;
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+#jokeButton:active {
+  transform: translateY(2px);
+}
+
+#jokeText {
+  font-size: 1.2em;
+  margin-top: 20px;
+  max-width: 600px;
+  text-align: center;
+  color: #333;
+}
+
+#jokeText {
+  font-style: italic;
+  margin-top: 10px;
+}
 .contact-form-container {
   max-width: 600px;
   margin: 40px auto; /* Increased margin */
@@ -329,7 +371,7 @@ section {
   color: white;
   text-align: center;
 }
-
+.cen
 .contact-form-container h2 {
   margin-bottom: 20px;
   font-family: "Dotmatrix";

@@ -153,6 +153,11 @@
         </div>
     </section>
     <section id="contact" class="animate-on-scroll">
+        <div class="center-container">
+            <button id="jokeButton">Wanna Hear a Joke?</button>
+            <p id="jokeText">Click the button to hear a joke!</p>
+        </div>
+        
         <div class="contact-form-container">
             <h2>Contact Me</h2>
             <form id="contact-form">
@@ -227,6 +232,48 @@
         closeBtn.addEventListener('click', () => {
             navLinks.classList.remove('active'); // Remove the active class to hide links
         });
+        document.getElementById("jokeButton").addEventListener("click", getJoke);
+
+async function getJoke() {
+    try {
+        const response = await fetch("https://icanhazdadjoke.com/", {
+            headers: {
+                Accept: "application/json",
+            },
+        });
+        const data = await response.json();
+        const joke = data.joke;
+
+        // Display the joke
+        document.getElementById("jokeText").textContent = joke;
+
+        // Speak the joke with adjusted settings
+        readAloud(joke);
+    } catch (error) {
+        document.getElementById("jokeText").textContent = "Oops! Couldn't fetch a joke.";
+        console.error("Error fetching joke:", error);
+    }
+}
+
+function readAloud(text) {
+    const utterance = new SpeechSynthesisUtterance(text);
+
+    // Adjust rate and pitch for a more natural sound
+    utterance.rate = 0.9; // Slightly slower for a natural tone
+    utterance.pitch = 1.1; // Slightly higher pitch
+
+    // Select a more human-like voice, if available
+    const voices = window.speechSynthesis.getVoices();
+    const preferredVoices = voices.filter(voice => voice.lang.includes('en') && voice.name.includes('Google')); // Google voices tend to be more natural
+
+    if (preferredVoices.length > 0) {
+        utterance.voice = preferredVoices[0]; // Use the first preferred voice available
+    }
+
+    // Speak the joke
+    window.speechSynthesis.speak(utterance);
+}
+
 
        // Function to handle form submission
   document.getElementById('contact-form').addEventListener('submit', function(event) {
